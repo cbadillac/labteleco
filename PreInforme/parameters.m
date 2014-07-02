@@ -15,7 +15,6 @@ syms Z1 Z2;
 R1
 R2
 
-
 %% My System
 %R2 = solve(Zo - Z2.*(Zo-Zl) == (Z2.*(Zl-Zo) -Zo.*Zl)/(Zo-Z2));
 %R1 = Zo - R2/(Zo -Zl);
