@@ -97,12 +97,14 @@
 \newpage 
 \section{Resumen}
 
+En el trabajo con señales de bajas frecuencias es posible usar las técnicas usuales de diseño. Una vez se usan señales de alta frecuencia, el viaje de éstas por una línea de transmisión es condicionado por características del medio de conducción y tipo de onda, en donde es necesario usar técnicas de adaptación descritas en el documento de la experiencia, en particular, adaptación usando una malla \textit{"L"}.
 
 \section{Objetivos}
 
 \begin{itemize}
-\item Simulación de modulación 
-
+\item Estudiar la técnica RDT.
+\item Simulación de RDT a distintos valores de $Z_l$. 
+\item Adapatación de malla tipo \textit{"L"}.
 \end{itemize}
 
 
@@ -154,6 +156,7 @@ longitud de cable. Esto es semejante en su funcionamiento al del radar.
 
 \end{itemize}
 
+<<<<<<< HEAD
 \newpage
 
 \subsection{Pregunta 2: Parámetros de cable URM 202}
@@ -211,16 +214,46 @@ Para calcular $\epsilon_{r}$, se ocupa la siguiente definición:
 \epsilon_{r} & = & \left(\dfrac{c}{v_{p}}\right)^{2}\nonumber \\
 			 & = & 1.5241\label{eqn:er}
 \end{eqnarray}
+=======
+
+%%%%%%%%%%%%%%%%%%%%% <TOBAL> %%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{Pregunta 3: Cálculo de parámetros}
+
+Se calculan los parámetros de la malla \textit{"L"} mediante el sistema de ecuaciones
+\\
+	$$Z_o = \frac{Z_3+Z_o}{Z_2++Z_3+Z_o}Z_2 + Z_1$$
+	$$Z_l = \frac{Z_1+Z_l}{Z_1+Z_2+Z_l}Z_2 + Z_3$$
+\\
+Para la malla "L" se tiene $Z_3 = 0$, con lo que para los siguiente valores se tiene\\
+
+	\begin{itemize}
+	\item $K_o = 50[\Omega], K_l = 75[\Omega]$
+			$$ R_1 = 25\sqrt{3} $$
+			$$ R_2 = 50\sqrt{3} $$
+	\item $K_o = 75[\Omega], K_l = 300[\Omega]$
+			$$ R_1 = 150\sqrt{3} $$
+			$$ R_2 = 50\sqrt{3} $$
+	\item $K_o = 75[\Omega], K_l = 50[\Omega]$
+			$$ R_1 = 25\sqrt{3}j $$
+			$$ R_2 = -75\sqrt{3}j $$
+	\end{itemize}
+>>>>>>> tobal
 
 A con lo calculado a partir de la ecuación~\ref{eqn:er}, podemos obtener la longitud de onda:
 \begin{equation}
 \lambda_{L} = \dfrac{\lambda_{0}}{\sqrt{\epsilon_{r}}} = \dfrac{2.43\cdot 10^{8}}{f}
 \end{equation}
 
+<<<<<<< HEAD
 La longitud de onda queda dependiendo de la frecuencia que utilicemos. 
+=======
+%%%%%%%%%%%%%%%%%%%%% </TOBAL> %%%%%%%%%%%%%%%%%%%%%%%
+>>>>>>> tobal
 
 Por último, para calcular el factor de atenuación, se realiza el siguiente experimento: Un extremo del cable se cortocircuita, lo que produce un factor de reflexión igual a -1. Luego de ésto, medimos la diferencia de voltaje que se aprecia desde que se manda el pulso hasta cuando se recibe. Luego de ésto aplicamos la siguiente expresión:
 
+<<<<<<< HEAD
 \begin{equation}
 \alpha = \dfrac{ln\left(\dfrac{V_{in1}}{V_{in2}}\right)}{2L}
 \end{equation}
@@ -228,13 +261,17 @@ Por último, para calcular el factor de atenuación, se realiza el siguiente exp
 
 
 %%%%%%%%%%%%%%%CONCLUSIONES%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+=======
+%%%%%%%%%%%%%%% CONCLUSIONES %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+>>>>>>> tobal
 \newpage
 \section{Conclusiones}
 
 Tras el desarrollo de esta experiencia se puede esperar que:
 \begin{itemize}
-\item asdasdfads
-
+\item Haciendo uso de la información dada para la experiencia se pudo determinar los valores de las impedancias usadas en la malla de adaptación \textit{"L"}. Con esto, ya se tiene el programa para resolver los valores de las cargas desconocidas en la experiencia.
+\item Con las simulaciones se tienen los resultados a esperar en la experienia, pudiendo verificar, en el momento de realizar la sesión, las mediciones obtenidas.
+\item La técnica de medición RDT permiten obtener los valores característicos del conductor de modo sencillo con la instrumentación adecuada.
 \end{itemize}
 
 
