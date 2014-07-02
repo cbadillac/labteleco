@@ -97,12 +97,14 @@
 \newpage 
 \section{Resumen}
 
+En el trabajo con señales de bajas frecuencias es posible usar las técnicas usuales de diseño. Una vez se usan señales de alta frecuencia, el viaje de éstas por una línea de transmisión es condicionado por características del medio de conducción y tipo de onda, en donde es necesario usar técnicas de adaptación descritas en el documento de la experiencia, en particular, adaptación usando una malla \textit{"L"}.
 
 \section{Objetivos}
 
 \begin{itemize}
-\item Simulación de modulación 
-
+\item Estudiar la técnica RDT.
+\item Simulación de RDT a distintos valores de $Z_l$. 
+\item Adapatación de malla tipo \textit{"L"}.
 \end{itemize}
 
 
@@ -160,12 +162,12 @@ longitud de cable. Esto es semejante en su funcionamiento al del radar.
 
 \subsection*{Pregunta 3: Cálculo de parámetros}
 
-Se calculan los parámetros de la malla "L" mediante el sistema de ecuaciones
-
+Se calculan los parámetros de la malla \textit{"L"} mediante el sistema de ecuaciones
+\\
 	$$Z_o = \frac{Z_3+Z_o}{Z_2++Z_3+Z_o}Z_2 + Z_1$$
 	$$Z_l = \frac{Z_1+Z_l}{Z_1+Z_2+Z_l}Z_2 + Z_3$$
-
-con lo que para los siguiente valores se tiene\\
+\\
+Para la malla "L" se tiene $Z_3 = 0$, con lo que para los siguiente valores se tiene\\
 
 	\begin{itemize}
 	\item $K_o = 50[\Omega], K_l = 75[\Omega]$
@@ -175,10 +177,9 @@ con lo que para los siguiente valores se tiene\\
 			$$ R_1 = 150\sqrt{3} $$
 			$$ R_2 = 50\sqrt{3} $$
 	\item $K_o = 75[\Omega], K_l = 50[\Omega]$
-			$$ R_1 = 25\sqrt{3} $$
-			$$ R_2 = 75\sqrt{3} $$
+			$$ R_1 = 25\sqrt{3}j $$
+			$$ R_2 = -75\sqrt{3}j $$
 	\end{itemize}
-
 
 
 %%%%%%%%%%%%%%%%%%%%% </TOBAL> %%%%%%%%%%%%%%%%%%%%%%%
