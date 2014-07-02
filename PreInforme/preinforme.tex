@@ -114,7 +114,7 @@
 %%%%%%%%%%%%%%PREVIO%%%%%%%%%%%%%%%%%%%%%%%
 %\subsection{Trabajo Previo}
 % \subsubsection{Simulación controlador PI}
-\subsection*{Pregunta 1: Esquema de medición mediante RDT}
+\subsection{Pregunta 1: Esquema de medición mediante RDT}
 
 La `Reflectometría en el dominio del tiempo' es una técnica que  utiliza el coeficiente de reflexión en líneas de transmisión para obtener los parámetros que infieren en el comportamiento de una línea de transmisión, como lo es su Largo $L$, Largo eléctrico $L_{E}$, velocidad de propagación $v_{p}$, impedancia característica $Z_{0}$, entre otras. Además esta técnica es usada para detectar fallas en lineas de transmisión. Para ello es que se trabaja generalmente en situaciones de cortocircuito y circuito abierto debido a que se conocen las respuestas de reflexión para cada caso.
 
@@ -126,8 +126,7 @@ La `Reflectometría en el dominio del tiempo' es una técnica que  utiliza el co
   \label{fig:schrdt}
 \end{wrapfigure}
 
-Hay diferentes tipos de reflectómetros, desde un osciloscopio de 
-muestro con muy elevado tiempo de respuesta y amplio ancho de banda del orden de los 
+Hay diferentes tipos de reflectómetros, desde un osciloscopio con muy elevado tiempo de respuesta y amplio ancho de banda del orden de los 
 GHZ a instrumentos portátiles para detectar fallas en cables. 
 
 Un RDT emite un pulso muy corto en el tiempo. Si el conductor es de una impedancia uniforme
@@ -141,7 +140,7 @@ muestra como una función del tiempo y, dado que la velocidad de la propagación
 es relativamente constante para una impedancia dada, puede ser leído como una función de la
 longitud de cable. Esto es semejante en su funcionamiento al del radar.
 
-\subsubsection*{Metodología}
+\subsubsection{Metodología}
 
 \begin{itemize}
 \item Esperando que la impedancia característica de la linea $Z_{0}$ sea igual a la impedancia del generador $Z_{G}$ se tendrá que al transmitir un pulso, éste lo hará con la mitad de su amplitud inicial $ V(0,0^{+}) = \frac{V_{G}}{2}$. 
@@ -155,26 +154,76 @@ longitud de cable. Esto es semejante en su funcionamiento al del radar.
 
 \end{itemize}
 
-\subsection*{Pregunta 2: Parámetros}
-ajdslasdfjlzmxcmcv,zxmcvsdfgiojsdfksdgnxn,xmnsdjlskdfjoiesdfkasjdf
-akldsjfklasjdflkafsjdoqiwerudsajlfkz,mzx,cvnafjaslkdjfioqewr
+\newpage
 
-Pregunta 3
+\subsection{Pregunta 2: Parámetros de cable URM 202}
 
-Esta es la famoza ecuacxion de DIlbert
+\begin{figure}[H]
+\centering
+\includegraphics[scale=1]{img/URM202.pdf}
+\caption{Construcción de un cable coaxial URM 202.}
+\label{urm202}
+\end{figure}
 
-	$$S = k log(J)$$
-	
-Con esto se demuestra que badilla se la come
+\subsubsection{Características técnicas de Cable Coaxial URM 202}
 
+\begin{multicols}{2}
 
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|}
+\hline 
+Caracteristica & Valor \\ 
+\hline 
+Impedancia Característica & $75$[$\Omega$] \\ 
+\hline 
+Capacitancia & 55 [$\frac{\mbox{pF}}{\mbox{m}}$] \\ 
+\hline 
+Velocidad nominal de propagación & 81\% \\ 
+\hline 
+\end{tabular} 
+\caption{Características Eléctricas de un Cable Coaxial URM202}
+\end{table}
 
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|}
+\hline 
+\multicolumn{2}{|c|}{Atenuación Nominal} \\ 
+\hline 
+100[MHz] & 11[dB/100m] \\ 
+\hline 
+200[MHz] & 16[dB/100m] \\ 
+\hline 
+500[MHz] & 27[dB/100m] \\ 
+\hline 
+900[MHz] & 40[dB/100m] \\ 
+\hline 
+\end{tabular} 
+\caption{Atenuaciones nominales}
+\label{aten}
+\end{table}
 
+\end{multicols}
 
+Para calcular $\epsilon_{r}$, se ocupa la siguiente definición:
+\begin{eqnarray}
+\epsilon_{r} & = & \left(\dfrac{c}{v_{p}}\right)^{2}\nonumber \\
+			 & = & 1.5241\label{eqn:er}
+\end{eqnarray}
 
+A con lo calculado a partir de la ecuación~\ref{eqn:er}, podemos obtener la longitud de onda:
+\begin{equation}
+\lambda_{L} = \dfrac{\lambda_{0}}{\sqrt{\epsilon_{r}}} = \dfrac{2.43\cdot 10^{8}}{f}
+\end{equation}
 
+La longitud de onda queda dependiendo de la frecuencia que utilicemos. 
 
+Por último, para calcular el factor de atenuación, se realiza el siguiente experimento: Un extremo del cable se cortocircuita, lo que produce un factor de reflexión igual a -1. Luego de ésto, medimos la diferencia de voltaje que se aprecia desde que se manda el pulso hasta cuando se recibe. Luego de ésto aplicamos la siguiente expresión:
 
+\begin{equation}
+\alpha = \dfrac{ln\left(\dfrac{V_{in1}}{V_{in2}}\right)}{2L}
+\end{equation}
 
 
 
