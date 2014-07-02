@@ -17,7 +17,6 @@
 
 
 
-
 %%%%%%%%%%%%%%%%%%%%%%%  Numero de la experiencia %%%%%%%%%%%%%%
 \newcommand{\NUMExp}{4}
 
@@ -56,7 +55,7 @@
 \HRule \\[0.4cm]
 { \huge \bfseries Reflectometría en el dominio del tiempo y adaptación de impedancias en líneas de transmisión }\\[0.4cm]
 
-\HRule \\[5.7cm]
+\HRule \\[5.5cm]
 
 \begin{table}[h]
 \begin{center}
@@ -86,11 +85,11 @@
 \end{titlepage}
 \tableofcontents
 
-\newpage
+%\newpage
 %\listoffigures
 
 %\listoftables
-\newpage
+%\newpage
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%INTRODUCCIÓN%%%%%%%%%%%%%%%%%%%%
@@ -172,10 +171,121 @@ Con esto se demuestra que badilla se la come
 
 
 
+\subsection{Pregunta 4}
+
+Primero, para obtener una expresión que nos permita estimar  los parámetros asociados a la carga dada la respuesta RDT, es necesario recordar la expresióne generales de voltaje, que se muestra a continuación:
+
+\[
+V(x) = V_ +  \left( {1 + \Gamma _L  \cdot e{}^{ - 2\gamma (l - x)}} \right)
+\]
+
+Ésta ecuación determina la transformada fasorial del voltaje en cualquier lugar de la linea de transmisión. Como se solicitan expresiones temporales de las simulaciónes, en x=0 (bornes del generador), en conjunto con:
+
+\[
+\begin{array}{l}
+ \gamma  = \alpha  + j\beta  \\ 
+ \beta  = \frac{\omega }{{v_p }} \\ 
+ \end{array}
+\]
+
+Se tiene que:
+
+\[
+V(s) = V_ +  (s)\left( {1 + \Gamma _L  \cdot e^{\frac{{ - 2d}}{{v_p }}s} \cdot e^{ - 2\alpha d}} \right)
+\]
+
+Ésta expresión, es la conversión de la expresión fasorial en el dominio de la transformada de laplace, en ella se puede apreciar la dependencia de el voltaje que se le aplique a la entrada (el pulso de amplitud A en este caso $V_g=\frac{A}{s}$), como también de la carga (a través de $\Gamma_L$), por tanto, para la obtención de una expresión en el dominio temporal bastaría con remplazar los datos y aplicar la transformada inversa de laplace.
 
 
+A continuación se muestra en las imágenes los datos relevantes que se utilizarán para la obtención de R y C.
 
 
+\subsubsection{RC Paralelo}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{img/RC_paralelo_rme0.eps}
+\label{}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{img/RC_paralelo_rma0.eps}
+\label{}
+\end{figure}
+
+Para realizar está medición se hará uso el hecho de que en tiempo  ``infinito'' el condensador se comportará como circuito abierto, por lo que solo la resistencia será la carga.
+
+
+\subsubsection{RC Serie}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{img/RC_serie_rme0.eps}
+\label{}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{img/RC_serie_rma0.eps}
+\label{}
+\end{figure}
+
+A diferencia del caso anterior, aquí se hará uso del hecho que en un comienzo el condensador se comporta como un cortocircuito, por lo que solo la resistencia será la carga.
+
+\subsubsection{RL Paralelo}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{img/RL_paralelo_rme0.eps}
+\label{}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{img/RL_paralelo_rma0.eps}
+\label{}
+\end{figure}
+
+Aquí, en el tiempo inicial, el inductor se comporta como un circuito abierto, y dado que se encuentra en paralelo con la resistencia, la impedancia de carga será la carga.
+
+
+\subsubsection{LC Serie}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{img/RL_serie_rme0.eps}
+\label{}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{img/RL_serie_rma0.eps}
+\label{}
+\end{figure}
+
+Finalmente, el inductor en tiempo ``infinito'' se comporta como un cortocircuito, por lo que la impedancia de la carga es, de nuevo, la resistencia.
+
+En todos los casos previemante  analizados se cumple la expresión que se muestra a continuación:
+
+
+\[
+V = V_{in}  + V_{in} \left( {\frac{{R - Z_0 }}{{R + Z_0 }}} \right)
+\]
+
+Todo esto, debido a que en todos los casos previemante analizados, solo se analizaba cuando la impedancia de carga corresponde a la resistencia. Por tanto, despejando R, se tiene:
+
+\[
+R=Z_0 \left( {\frac{V}{{2V_ +   - V}}} \right)
+\]
+
+De ésta manera, es posible calcular la resistencia mediante, la respuesta RDT.
+
+Ahora, para el cálculo del condensador, se calcula el tiempo que se tarda en  llegar a estado estacionario, éste corresponde a $5\tau$. de ésta manera, a través del respectivo $\tau$ de cada medición, se despeja C, con el R calculado.
 
 
 %%%%%%%%%%%%%%%CONCLUSIONES%%%%%%%%%%%%%%%%%%%%%%%%%%%%
